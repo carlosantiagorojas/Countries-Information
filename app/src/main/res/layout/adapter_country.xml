@@ -24,30 +24,19 @@
             android:layout_height="400dp"
             android:orientation="horizontal">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout2"
+            <ImageView
+                android:id="@+id/contactsPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="1dp"
-                tools:ignore="MissingConstraints">
-
-
-                <ImageView
-                    android:id="@+id/contactsPhoto"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
-                    tools:ignore="ContentDescription"
-                    tools:src="@tools:sample/avatars" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="ContentDescription"
+                tools:src="@tools:sample/avatars" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
@@ -56,53 +45,79 @@
                 android:padding="10dp"
 
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+                app:layout_constraintTop_toBottomOf="@+id/contactsPhoto">
 
                 <TextView
-                    android:id="@+id/contactName"
+                    android:id="@+id/countryName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="@tools:sample/cities" />
+                    tools:text="@string/country_name" />
 
                 <TextView
-                    android:id="@+id/contactEmail"
+                    android:id="@+id/nativeName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/contactName"
-                    tools:text="@tools:sample/full_names" />
+                    app:layout_constraintTop_toBottomOf="@+id/countryName"
+                    tools:text="@string/native_name" />
 
-                <Button
-                    android:id="@+id/buttonPhone"
-                    style="?attr/materialButtonOutlinedStyle"
+                <TextView
+                    android:id="@+id/countryCode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:icon="@drawable/baseline_call_24"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="32dp"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nativeName"
+                    tools:text="@string/country_code" />
+
+                <TextView
+                    android:id="@+id/currencyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toEndOf="@+id/countryCode"
+                    app:layout_constraintTop_toBottomOf="@+id/nativeName"
+                    tools:text="@string/currency_name" />
+
+                <TextView
+                    android:id="@+id/currencySimbol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="32dp"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toEndOf="@+id/currencyName"
+                    app:layout_constraintTop_toBottomOf="@+id/nativeName"
+                    tools:text="@string/currency_simbol" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floating_action_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:backgroundTint="@color/light_blue_400"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/contactEmail"
-                    tools:text="@tools:sample/us_phones" />
+                    android:contentDescription="@string/fab_content_desc"
+                    app:srcCompat="@drawable/baseline_call_24"
+                    app:tint="@color/black_1000" />
 
-                <ImageView
-                    android:id="@+id/contactFav"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:src="@drawable/baseline_star_24"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/grey_500" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

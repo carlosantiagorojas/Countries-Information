@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Countries-Information</string>
+    <string name="currency_simbol">($)</string>
+    <string name="currency_name">Dolar</string>
+    <string name="native_name">Native Name</string>
+    <string name="country_name">Country Name</string>
+    <string name="country_code">COD</string>
+    <string name="fab_content_desc">floating button</string>
 </resources>
