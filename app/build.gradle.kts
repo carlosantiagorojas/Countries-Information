@@ -6,6 +6,9 @@ plugins {
 android {
     namespace = "com.puj.countries_information"
     compileSdk = 33
+    buildFeatures {
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "com.puj.countries_information"
