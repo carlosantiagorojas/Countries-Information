@@ -74,6 +74,17 @@ class CountryAdapter(private val context: Context, private val countries: List<C
         binding.cardCountries.setOnClickListener {
             // Create the intent
             val intent = Intent(context, CountryActivity::class.java)
+            // Get the selected country
+            val selectedCountry = countries[position]
+            // Put the country information in the intent with the corresponding format
+            intent.putExtra("name",selectedCountry.Name)
+            intent.putExtra("code","${selectedCountry.Alpha2Code} - ${selectedCountry.Alpha3Code}")
+            intent.putExtra("region",selectedCountry.Region)
+            intent.putExtra("subregion","${selectedCountry.SubRegion} (${selectedCountry.Latitude}, ${selectedCountry.Longitude})")
+            intent.putExtra("currency","(${selectedCountry.CurrencyCode}) - ${selectedCountry.CurrencySymbol}")
+            intent.putExtra("area","Area: ${selectedCountry.Area}")
+            intent.putExtra("numeric","NumericCode: ${selectedCountry.NumericCode}")
+            intent.putExtra("flag",selectedCountry.FlagPng)
             // Start the activity
             context.startActivity(intent)
         }
