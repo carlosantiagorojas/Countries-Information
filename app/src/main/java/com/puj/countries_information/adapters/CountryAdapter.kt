@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.puj.countries_information.classes.Country
 import com.puj.countries_information.databinding.AdapterCountryBinding
+import com.squareup.picasso.Picasso
 
 class CountryAdapter(private val context: Context, private val countries: List<Country>) : BaseAdapter() {
 
@@ -29,7 +30,6 @@ class CountryAdapter(private val context: Context, private val countries: List<C
         val inflater = LayoutInflater.from(context)
         val binding = AdapterCountryBinding.inflate(inflater, parent, false)
 
-        println(country.Name)
         binding.countryName.text = country.Name
         binding.nativeName.text = country.NativeName
         binding.countryCode.text = country.Alpha3Code
@@ -37,7 +37,7 @@ class CountryAdapter(private val context: Context, private val countries: List<C
         binding.currencySymbol.text = country.CurrencySymbol
 
         // You can also load images using a library like Picasso or Glide
-        // Picasso.get().load(country.Flag).into(binding.countryPhoto)
+        Picasso.get().load(country.FlagPng).into(binding.countryPhoto)
 
         return binding.root
     }
