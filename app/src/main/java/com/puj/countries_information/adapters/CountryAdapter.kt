@@ -12,33 +12,54 @@ import com.squareup.picasso.Picasso
 
 class CountryAdapter(private val context: Context, private val countries: List<Country>) : BaseAdapter() {
 
+    /**
+     * Get the number of countries
+     */
     override fun getCount(): Int {
         return countries.size
     }
 
+    /**
+     * Get the country at the specified position
+     * @param position Position of the country
+     */
     override fun getItem(position: Int): Any {
         return countries[position]
     }
 
+    /**
+     * Get the id of the country at the specified position
+     * @param position Position of the country
+     */
     override fun getItemId(position: Int): Long {
         return position.toLong()
     }
 
+    /**
+     * Get the view of the country at the specified position
+     * @param position Position of the country
+     * @param convertView View of the country
+     * @param parent Parent view
+     * @return View of the country
+     */
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        // Get the country at the specified position
         val country = countries[position]
-        val inflater = LayoutInflater.from(context)
-        val binding = AdapterCountryBinding.inflate(inflater, parent, false)
+        // Inflate the view
+        val binding = AdapterCountryBinding.inflate(LayoutInflater.from(context), parent, false)
 
+        // Set the country information
         binding.countryName.text = country.Name
         binding.nativeName.text = country.NativeName
         binding.countryCode.text = country.Alpha3Code
         binding.currencyName.text = country.CurrencyName
         binding.currencySymbol.text = country.CurrencySymbol
 
-        // You can also load images using a library like Picasso or Glide
+        // Load the country flag with Picasso library
         Picasso.get().load(country.FlagPng).into(binding.countryPhoto)
 
+        // Return the view
         return binding.root
     }
 }

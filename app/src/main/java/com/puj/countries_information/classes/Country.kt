@@ -1,5 +1,8 @@
 package com.puj.countries_information.classes
 
+/**
+ * Country class to store the information of a country
+ */
 data class Country(
     val Name: String,
     val Alpha2Code: String,
