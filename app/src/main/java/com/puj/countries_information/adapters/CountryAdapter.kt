@@ -2,6 +2,8 @@ package com.puj.countries_information.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,6 +61,13 @@ class CountryAdapter(private val context: Context, private val countries: List<C
         // Load the country flag with Picasso library
         Picasso.get().load(country.FlagPng).into(binding.countryPhoto)
 
+        // Redirect to the phone app and show the country numeric code
+        binding.floatingActionButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:${country.NumericCode}")
+            // Start the activity
+            context.startActivity(intent)
+        }
         // Return the view
         return binding.root
     }
