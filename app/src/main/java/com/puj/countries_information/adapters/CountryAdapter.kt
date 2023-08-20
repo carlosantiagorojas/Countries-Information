@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import com.puj.countries_information.activities.CountryActivity
 import com.puj.countries_information.classes.Country
 import com.puj.countries_information.databinding.AdapterCountryBinding
 import com.squareup.picasso.Picasso
@@ -68,6 +69,15 @@ class CountryAdapter(private val context: Context, private val countries: List<C
             // Start the activity
             context.startActivity(intent)
         }
+
+        // Intent to new activity when the user clicks on the card
+        binding.cardCountries.setOnClickListener {
+            // Create the intent
+            val intent = Intent(context, CountryActivity::class.java)
+            // Start the activity
+            context.startActivity(intent)
+        }
+
         // Return the view
         return binding.root
     }
