@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardContacts"
+        android:id="@+id/cardCountries"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -25,7 +25,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/contactsPhoto"
+                android:id="@+id/countryPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
@@ -47,7 +47,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/contactsPhoto">
+                app:layout_constraintTop_toBottomOf="@+id/countryPhoto">
 
                 <TextView
                     android:id="@+id/countryName"
@@ -94,7 +94,7 @@
                     tools:text="@string/currency_name" />
 
                 <TextView
-                    android:id="@+id/currencySimbol"
+                    android:id="@+id/currencySymbol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
