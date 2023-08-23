@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="constraintLayout2" type="id" />
+    <item name="subRegion" type="id" />
+    <item name="Region" type="id" />
+    <item name="currency" type="id" />
+</resources>
